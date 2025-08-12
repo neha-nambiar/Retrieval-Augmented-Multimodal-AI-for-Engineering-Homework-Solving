@@ -1,17 +1,21 @@
-# EE Tutor System
+<div align="center">
 
-[![Modal](https://img.shields.io/badge/Modal-Cloud-green.svg)](https://modal.com)
-[![vLLM](https://img.shields.io/badge/vLLM-0.9.1-orange.svg)](https://vllm.ai)
-[![Python](https://img.shields.io/badge/Python-3.12-blue.svg)](https://python.org)
-[![Streamlit](https://img.shields.io/badge/Streamlit-Latest-red.svg)](https://streamlit.io)
-[![PyTorch](https://img.shields.io/badge/PyTorch-Latest-red.svg)](https://pytorch.org)
+# EE Homework Solver
+
+[![Modal](https://img.shields.io/badge/Modal-green.svg)](https://modal.com)
+[![vLLM](https://img.shields.io/badge/vLLM-orange.svg)](https://vllm.ai)
+[![Python](https://img.shields.io/badge/Python-blue.svg)](https://python.org)
+[![Streamlit](https://img.shields.io/badge/Streamlit-red.svg?logo=streamlit)](https://streamlit.io)
+[![PyTorch](https://img.shields.io/badge/PyTorch-orange.svg?logo=pytorch&logoColor=white)](https://pytorch.org)
 [![Hugging Face](https://img.shields.io/badge/🤗%20Hugging%20Face-Models-yellow.svg)](https://huggingface.co)
+
+</div>
 
 An AI-powered electrical engineering homework solver that analyzes textbook PDFs, understands questions with images, and generates detailed step-by-step solutions with circuit diagrams using schemdraw.
 
 ## 🎥 Demo
 
-
+https://github.com/user-attachments/assets/f4468396-6909-4174-b8ea-08ed2c2136d9
 
 ## 🚀 Features
 
@@ -105,11 +109,6 @@ ee-tutor-system/
 
 ## 🛠️ Setup
 
-### Prerequisites
-- Python 3.12
-- Modal account and CLI
-- Git
-
 ### Installation
 
 1. **Clone repository**:
@@ -157,8 +156,6 @@ ee-tutor-system/
 ### Performance Optimizations
 - **Warm Containers**: `min_containers=1` keeps models loaded
 - **Parallel Processing**: PDF indexing runs parallel to server startup
-- **Memory Management**: Batch processing with GPU cache clearing
-- **Fast Boot**: `--enforce-eager` flag for vLLM servers
 - **Persistent Volumes**: Cache models between deployments
 
 ### Model Configuration
@@ -175,7 +172,7 @@ ee-tutor-system/
 ## 📊 Processing Flow
 
 1. **Image Processing**: Convert user uploads to base64 for multimodal input
-2. **PDF Indexing**: ColPali converts PDF pages to embeddings (parallel)
+2. **PDF Indexing**: ColPali converts PDF pages to embeddings
 3. **Page Retrieval**: Find top-3 relevant pages using semantic similarity
 4. **Solution Generation**: Qwen2.5-VL analyzes question + images + PDF context
 5. **Code Generation**: DeepSeek generates schemdraw code using few-shot examples
