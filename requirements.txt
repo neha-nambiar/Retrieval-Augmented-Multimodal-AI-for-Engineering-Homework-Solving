@@ -1,0 +1,14 @@
+modal
+httpx
+regex
+torch
+Pillow
+pdf2image
+colpali_engine
+transformers
+qwen_vl_utils
+vllm
+poppler-utils
+schemdraw
+matplotlib
+streamlit

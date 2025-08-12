@@ -1,0 +1,114 @@
+You are a Python expert specializing in schemdraw electrical circuit diagrams.
+
+Here are schemdraw examples to learn from:
+
+EXAMPLE 1 - Voltage Divider:
+```python
+import schemdraw
+from schemdraw import elements as elm
+
+with schemdraw.Drawing() as d:
+    r1 = elm.Resistor().down().label('R1').dot()
+    d.push()
+    elm.Line().right(d.unit/2).dot(open=True)
+    elm.Gap().down().label(['+', '$V_o$', '–'])
+    elm.Line().left(d.unit/2).idot(open=True)
+    elm.Resistor().up().label('R2').hold()
+    elm.Line().left()
+    elm.SourceV().toy(r1.start).label('$V_{in}$')
+    elm.Line().tox(r1.start)
+```
+
+EXAMPLE 2 - RC High-pass Filter:
+```python
+import schemdraw
+from schemdraw import elements as elm
+
+with schemdraw.Drawing() as d:
+    elm.Capacitor().dot().idot(open=True).label('C').label('$V_{in}$', 'left')
+    elm.Line().length(d.unit/2).label('$V_o$', 'right').dot(open=True).hold()
+    elm.Resistor().down().label('R')
+    elm.Ground()
+```
+
+EXAMPLE 3 - RLC Bandpass Filter:
+```python
+import schemdraw
+from schemdraw import elements as elm
+
+with schemdraw.Drawing() as d:
+    elm.Resistor().dot().idot(open=True).label('R').label('$V_{in}$', 'left')
+    elm.Line().label('$V_o$', 'right').dot(open=True).hold()
+    elm.Inductor2().down().label('L')
+    elm.Line().right(d.unit/3).dot()
+    elm.Ground()
+    elm.Line().length(d.unit/3)
+    elm.Capacitor().up().label('C').dot()
+```
+
+EXAMPLE 4 - Half-wave rectifier
+```python
+import schemdraw
+from schemdraw import elements as elm
+
+with schemdraw.Drawing() as d:
+    elm.SourceSin().label('ac')
+    elm.Line().right(d.unit/2).dot(open=True)
+    elm.Diode().dot(open=True)
+    elm.Line().length(d.unit/2).linestyle('--')
+    elm.Resistor().down().label('$R_{load}$', 'bottom')
+    elm.Line().left(d.unit/2).linestyle('--')
+    elm.Line().dot(open=True).idot(open=True)
+    elm.Line().length(d.unit/2)
+```
+
+EXAMPLE 5 - Three-Phase Power Transmission
+```python
+import schemdraw
+from schemdraw import elements as elm
+
+with schemdraw.Drawing() as d:
+    elm.Dot()
+    vc = elm.SourceV().theta(210).dot().label('$v_c$').label('c', 'left').hold()
+    vb = elm.SourceV().theta(330).dot().label('$v_b$').label('b', 'right').hold()
+    va = elm.SourceV().theta(90).dot().label('$v_a$').label('a', 'right').hold()
+    elm.RBox().right(12).at(va.end).label('$Z_{line}$').dot()
+    za = elm.RBox().down().label('$Z_{load}$').dot().label('a', 'right')
+    zc = elm.RBox().theta(330).label('$Z_{load}$').dot().label('c', 'right').hold()
+    zb = elm.RBox().theta(210).label('$Z_{load}$').dot().label('b', 'left')
+    elm.RBox().tox(vb.end).label('$Z_{line}$')
+    elm.Line().down(1).at(zc.end)
+    elm.RBox().tox(vc.end).label('$Z_{line}$', 'bottom')
+    elm.Line().toy(vc.end)
+```
+
+EXAMPLE 6 - RLC response
+```python
+import schemdraw
+from schemdraw import elements as elm
+
+with schemdraw.Drawing() as d:
+    v1 = elm.SourceV().label('$V_{dc}$')
+    elm.Switch(action='close').right().label('t=0', color='royalblue', fontsize=12)
+    L = elm.Inductor().label('L').dot()
+    elm.CurrentLabel(top=False).at(L).label('$I_o$', fontsize=12).color('royalblue')
+    elm.Resistor().down().label('R').dot().hold()
+    elm.Line().right()
+    elm.Capacitor().down().label(['+', '$V_o$', '–'], color='royalblue', fontsize=12).label('C', 'bottom')
+    elm.Line().to(v1.start)
+```
+
+Generate schemdraw Python code for the circuit diagram.
+
+RULES:
+1. Start with: import schemdraw; from schemdraw import elements as elm
+2. Use 'with schemdraw.Drawing() as d:' context manager
+3. Include component labels with calculated values
+
+Question: {question}
+Solution: {solution}
+
+Return your response in this exact JSON format:
+{{
+  "code": "import schemdraw\\nfrom schemdraw import elements as elm\\n\\nwith schemdraw.Drawing() as d:\\n    # your code here"
+}}
