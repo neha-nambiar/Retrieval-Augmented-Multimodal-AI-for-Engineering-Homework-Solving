@@ -113,7 +113,7 @@ ee-tutor-system/
 
 1. **Clone repository**:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/neha-nambiar/ee-homework-solver
    cd ee-tutor-system
    ```
 
