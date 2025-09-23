@@ -2,8 +2,8 @@
 
 # EE Homework Solver
 
-[![Modal](https://img.shields.io/badge/Modal-green.svg)](https://modal.com)
 [![vLLM](https://img.shields.io/badge/vLLM-orange.svg)](https://vllm.ai)
+[![Modal](https://img.shields.io/badge/Modal-green.svg)](https://modal.com)
 [![Python](https://img.shields.io/badge/Python-blue.svg)](https://python.org)
 [![Streamlit](https://img.shields.io/badge/Streamlit-red.svg?logo=streamlit)](https://streamlit.io)
 [![PyTorch](https://img.shields.io/badge/PyTorch-orange.svg?logo=pytorch&logoColor=white)](https://pytorch.org)
