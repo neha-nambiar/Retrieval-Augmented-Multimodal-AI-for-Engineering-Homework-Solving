@@ -20,8 +20,8 @@ https://github.com/user-attachments/assets/f4468396-6909-4174-b8ea-08ed2c2136d9
 ## 🚀 Features
 
 - **📚 PDF Analysis**: Extract relevant pages from textbooks using ColPali vision-retrieval model
-- **🔍 Multi-modal Question Analysis**: Process text questions and circuit images using Qwen2.5-VL
-- **⚡ Circuit Diagram Generation**: Create schemdraw circuit diagrams using DeepSeek code generation
+- **🔍 Multi-modal Question Analysis**: Process textual questions and circuit images using Qwen2.5-VL
+- **⚡ Circuit Diagram Generation**: Create schemdraw circuit diagrams using DeepSeek code generation for output images.
 - **🌐 Streamlit Web Interface**: Tabbed interface with solution, generated code, and metadata
 - **🔄 Cloud Processing**: All AI models run on Modal cloud infrastructure with vLLM for fast inference
 - **⏱️ Performance Optimized**: Warm containers, parallel processing, and comprehensive logging
