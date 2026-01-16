@@ -1,6 +1,6 @@
 <div align="center">
 
-# EE Homework Solver
+# Retrieval Augmented Multimodal AI for Electrical Engineering Homework Solving
 
 [![vLLM](https://img.shields.io/badge/vLLM-orange.svg)](https://vllm.ai)
 [![Modal](https://img.shields.io/badge/Modal-green.svg)](https://modal.com)
@@ -113,7 +113,7 @@ ee-tutor-system/
 
 1. **Clone repository**:
    ```bash
-   git clone https://github.com/neha-nambiar/ee-homework-solver
+   git clone https://github.com/neha-nambiar/Retrieval-Augmented-Multimodal-AI-for-Engineering-Homework-Solving
    cd ee-tutor-system
    ```
 
